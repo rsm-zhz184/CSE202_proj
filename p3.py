@@ -11,21 +11,14 @@ GRASS = 3
 def algo_brute_p2(matrix, start_point, initial_h):
     
     pass
-
 def algo_p3(matrix, start_point, initial_h):
-    
-    # Create a Map instance from the given matrix.
     game_map = Map(matrix)
     
-    # Build the resource list from the Map instance.
-    # We combine stones and grass (ignore APPLE since not used in Problem 3).
     resource_list = []
     for s in game_map.stones:
         resource_list.append((s[0], s[1], STONE))
     for g in game_map.grass:
         resource_list.append((g[0], g[1], GRASS))
-    
-    # Helper function: Manhattan distance.
     def manhattan_distance(x1, y1, x2, y2):
         return abs(x1 - x2) + abs(y1 - y2)
     
